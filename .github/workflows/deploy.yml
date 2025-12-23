@@ -11,7 +11,7 @@ env:
 
 jobs:
   quality-and-build:
-    name: Step 1 & 2 — Quality Checks & Build Verification
+    name: "Step 1 & 2 - Quality Checks & Build Verification"
     runs-on: ubuntu-latest
 
     steps:
@@ -34,10 +34,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Step 1: Quality Checks — TypeScript (no emit)
+      - name: "Step 1: Quality Checks - TypeScript (no emit)"
         run: npx tsc --noEmit
 
-      - name: Step 1: Quality Checks — Lint
+      - name: "Step 1: Quality Checks - Lint"
         run: |
           if npm run | grep -q lint; then
             npm run lint --if-present
@@ -45,11 +45,11 @@ jobs:
             echo "No lint script defined; skipping."
           fi
 
-      - name: Step 2: Build Verification — npm run build
+      - name: "Step 2: Build Verification - npm run build"
         run: npm run build
 
   deploy-preview:
-    name: Step 3 — Deploy Preview (PRs)
+    name: "Step 3 - Deploy Preview (PRs)"
     needs: quality-and-build
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
@@ -66,7 +66,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy — Vercel (preview)
+      - name: "Deploy - Vercel (preview)"
         uses: amondnet/vercel-action@v20
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
@@ -78,12 +78,12 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Step 5: Post-Deployment Check — smoke test (preview)
+      - name: "Step 5: Post-Deployment Check - smoke test (preview)"
         run: |
           echo "Preview deployed (see deployment comment on PR)." || true
 
   deploy-production:
-    name: Step 4 & 5 — Deploy Production & Post-Deployment checks
+    name: "Step 4 & 5 - Deploy Production & Post-Deployment checks"
     needs: quality-and-build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
@@ -100,7 +100,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Deploy — Vercel (production)
+      - name: "Deploy - Vercel (production)"
         id: vercel
         uses: amondnet/vercel-action@v20
         with:
@@ -112,7 +112,7 @@ jobs:
         env:
           VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
 
-      - name: Step 5: Post-Deployment Check — production smoke test
+      - name: "Step 5: Post-Deployment Check - production smoke test"
         run: |
           echo "Checking ${SITE_URL} for HTTP 200..."
           for i in 1 2 3; do
