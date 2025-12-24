@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { FaLinkedin, FaGithub, FaInstagram, FaDiscord, FaFolderOpen, FaArrowUp, FaArrowRight, FaCheck, FaLink, FaAlignRight, FaAngleUp } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 
@@ -30,10 +31,10 @@ export default function Page() {
             <div className="link-text">Orçamento | Conheça a Wefronti</div>
           </a>
 
-          <a className="link-card" href="https://witorlinhares.com/projetos" target="_blank" rel="noopener noreferrer">
+          <Link className="link-card" href="/projetos">
             <div className="left-icon"><span className="inner-icon"><FaFolderOpen /></span></div>
             <div className="link-text">Veja meus projetos</div>
-          </a>
+          </Link>
 
           <a className="link-card" href="#">
             <div className="left-icon"><span className="inner-icon"><FaDiscord /></span></div>
