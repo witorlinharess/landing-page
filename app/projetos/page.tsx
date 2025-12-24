@@ -13,7 +13,7 @@ export default function ProjetosPage(){
     <main className="page-root projetos-root">
       <div className="projects-container">
         <h1 className="projects-title">Meus Projetos</h1>
-        <p className="projects-sub">Clique em visualizar para abrir o projeto (ou substitua os links pelas suas páginas).</p>
+        <p className="projects-sub">Confira alguns dos meus melhores projetos.</p>
 
         <div className="projects-grid">
           {projects.map(p => (
@@ -36,7 +36,6 @@ export default function ProjetosPage(){
           ))}
         </div>
 
-        <div className="projects-note">Substitua as imagens em <code>/public/projects/</code> pelos seus projetos.</div>
       </div>
     </main>
   )
