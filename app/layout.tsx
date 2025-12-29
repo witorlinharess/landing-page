@@ -1,6 +1,5 @@
 import '../styles/globals.css'
 import type { Metadata } from 'next'
-import { BackgroundBeams } from '@/components/ui/shadcn-io/background-beams'
 
 const SITE_URL = process.env.SITE_URL || 'https://witorlinhares.com'
 const SITE_NAME = 'Witor Linhares | Dev Full Stack'
@@ -61,7 +60,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="pt-BR">
       <body>
         <div className="site-root">
-          <BackgroundBeams />
 
           <div className="site-content">
             {children}
