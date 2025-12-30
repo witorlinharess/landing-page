@@ -30,12 +30,24 @@ export default function Projects({ count = 6 }: { count?: number }) {
   const sectionStyle: React.CSSProperties = { background: colors.background, color: colors.text, padding: '48px 16px' }
   // match Hero inner padding so content aligns exactly with Hero
   const containerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
+  const [hovered, setHovered] = useState<number | null>(null)
+
   const gridStyle: React.CSSProperties = { display: 'grid', gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 28 }
-  const cardStyle: React.CSSProperties = { borderRadius: 12, overflow: 'hidden', background: colors.gray, border: '1px solid rgba(255,255,255,0.02)', display: 'flex', flexDirection: 'column' }
+
+  // Card styles controlled here (no external CSS)
+  const cardBaseStyle: React.CSSProperties = {
+    borderRadius: 10,
+    overflow: 'hidden',
+    background: colors.background,
+    display: 'flex',
+    flexDirection: 'column',
+ 
+  }
+
   const mediaStyle: React.CSSProperties = { position: 'relative', width: '100%', paddingBottom: '100%', flex: '0 0 auto' }
   const infoStyle: React.CSSProperties = { padding: 16, display: 'flex', alignItems: 'center' }
-  const titleStyle: React.CSSProperties = { margin: 0, fontSize: 20 }
-  const descStyle: React.CSSProperties = { margin: '6px 0 0', color: 'rgba(245,245,245,0.55)', fontSize: 14 }
+  const titleStyle: React.CSSProperties = { margin: 0, fontSize: 20, color: colors.text }
+  const descStyle: React.CSSProperties = { margin: '6px 0 0', color: 'rgba(245,245,245,0.75)', fontSize: 14 }
 
   return (
     <section style={sectionStyle} aria-labelledby="projects-title">
@@ -44,20 +56,35 @@ export default function Projects({ count = 6 }: { count?: number }) {
         <p style={{ color: colors.textSecondary, fontSize: 22, fontWeight: 300, marginBottom: 18 }}>Confira alguns dos meus melhores projetos.</p>
 
         <div style={gridStyle}>
-          {projects.map(p => (
-            <article key={p.id} style={cardStyle}>
-              <div style={mediaStyle}>
-                <Image src={p.image} alt={p.title} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
-              </div>
+          {projects.map(p => {
+            const cardStyle: React.CSSProperties = {
+              ...cardBaseStyle,
+            }
 
-              <div style={infoStyle}>
-                <div>
-                  <h3 style={titleStyle}>{p.title}</h3>
-                  <p style={descStyle}>{p.description}</p>
+            return (
+              <article
+                key={p.id}
+                style={cardStyle}
+                onMouseEnter={() => setHovered(p.id)}
+                onMouseLeave={() => setHovered(null)}
+                tabIndex={0}
+                onFocus={() => setHovered(p.id)}
+                onBlur={() => setHovered(null)}
+                aria-labelledby={`proj-${p.id}-title`}
+              >
+                <div style={mediaStyle}>
+                  <Image src={p.image} alt={p.title} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
                 </div>
-              </div>
-            </article>
-          ))}
+
+                <div style={infoStyle}>
+                  <div style={{ flex: 1 }}>
+                    <h3 id={`proj-${p.id}-title`} style={titleStyle}>{p.title}</h3>
+                    <p style={descStyle}>{p.description}</p>
+                  </div>
+                </div>
+              </article>
+            )
+          })}
         </div>
       </div>
     </section>

@@ -8,8 +8,8 @@ type Props = {
 
 export default function ButtonCta({ href = '#', children = 'Saiba mais' }: Props) {
   const style: React.CSSProperties = {
-    background: colors.white,
-    color: colors.background,
+    background: colors.purple,
+    color: colors.white,
     padding: '12px 48px',
     borderRadius: 5,
     textDecoration: 'none',
