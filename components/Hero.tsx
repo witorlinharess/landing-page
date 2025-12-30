@@ -3,7 +3,7 @@ import ButtonCta from './ButtonCta'
 
 export default function Hero(){
   // reduce vertical footprint so Projects sits closer to Hero
-  const sectionStyle: React.CSSProperties = { background: colors.background, minHeight: '72vh', display: 'flex', alignItems: 'flex-start', color: colors.text }
+  const sectionStyle: React.CSSProperties = { background: colors.background, minHeight: '72vh', display: 'flex', alignItems: 'flex-start', color: colors.text, borderBottom: `1px solid ${colors.line}`, paddingBottom: 40 }
   const innerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
   const subtitleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 22, color: colors.textSecondary }
   const titleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 'clamp(40px, 14vw, 80px)', lineHeight: 1.04, marginTop: 60,

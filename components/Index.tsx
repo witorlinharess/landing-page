@@ -1,6 +1,6 @@
 import Header from './Header'
 import Hero from './Hero'
-import Projects from './Projects'
+import Footer from './Footer'
 import { colors } from '../lib/colors'
 
 export default function Index() {
@@ -13,7 +13,8 @@ export default function Index() {
 
       <main style={mainStyle}>
         <Hero />
-        <Projects count={6} />
+        {/* short footer below the hero */}
+        <Footer />
       </main>
     </div>
   )

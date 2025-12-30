@@ -8,7 +8,7 @@ import ButtonCta from './ButtonCta'
 type Project = { id: number; title: string; description: string; image: string; url: string }
 
 const PROJECTS: Project[] = [
-  { id: 1, title: 'Teste do Projeto Um', description: 'Design de sites', image: '/projects/projeto-1.png', url: '#' },
+  { id: 1, title: 'Site Wefronti', description: 'Site desenvolvido para a Wefronti, empresa Brasileira de tecnologia.', image: '/projects/projeto-1.png', url: 'https://wefronti.com' },
   { id: 2, title: 'Projeto Dois', description: 'Desenvolvimento Web', image: '/projects/project-2.svg', url: '#' },
   { id: 3, title: 'Projeto Três', description: 'Design de Interface', image: '/projects/project-3.svg', url: '#' }
 ]
@@ -27,11 +27,9 @@ export default function Projects({ count = 3 }: { count?: number }) {
 
   // Card styles controlled here (no external CSS)
   const cardBaseStyle: React.CSSProperties = {
-    borderRadius: 12,
+    borderRadius: 10,
     overflow: 'hidden',
-    background: colors.gray,
-    transition: 'box-shadow 200ms ease',
-    boxShadow: '0 10px 28px rgba(0,0,0,0.28)'
+    background: colors.card,
   }
 
   // image-focused card: image on top, content row below
@@ -44,7 +42,7 @@ export default function Projects({ count = 3 }: { count?: number }) {
     <section style={sectionStyle} aria-labelledby="projects-title">
       <div style={containerStyle}>
         <h3 id="projects-title" style={{ fontSize: 56,fontWeight: 300, margin: '0 0 6px' }}>Meus Projetos</h3>
-        <p style={{ color: colors.textSecondary, fontSize: 22, fontWeight: 300, marginBottom: 18 }}>Confira alguns dos meus melhores projetos.</p>
+        <p style={{ color: colors.textSecondary, fontSize: 22, fontWeight: 300, marginBottom: 64 }}>Confira alguns dos meus melhores projetos.</p>
 
         <div style={gridStyle}>
           {projects.map(p => {

@@ -17,7 +17,7 @@ export default function Header() {
         <div style={siteNameStyle}>WL</div>
 
         <ul style={listStyle}>
-          <li><Link href="#" style={linkStyle}>Projetos</Link></li>
+          <li><Link href="/projetos" style={linkStyle}>Projetos</Link></li>
           <li><Link href="#" style={linkStyle}>Sobre</Link></li>
           <li><Link href="#" style={linkStyle}>Blog</Link></li>
         </ul>
