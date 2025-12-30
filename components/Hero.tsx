@@ -37,7 +37,10 @@ export default function Hero(){
           {/* horizontal divider that fills space between h2 and the button */}
           <div aria-hidden style={{ flex: 1, height: 1, background: colors.gray, opacity: 0.9 }} />
 
-          <ButtonCta href="/projetos">Iniciar um projeto</ButtonCta>
+          <div style={{ display: 'flex', gap: 12 }}>
+            <ButtonCta href="#" external={true}>Iniciar um projeto</ButtonCta>
+            <ButtonCta href="/projetos" variant="ghost">Portfólio</ButtonCta>
+          </div>
         </div>
 
       </div>

@@ -9,6 +9,8 @@ export const colors = {
   purple: '#5e72f0ff',
   card: '#1d1d1dff',
   footer: '#0a0a0aff',
+  buttonPortfolio: '##060506ff',
+  borderButton:'#434343ff',
 
   // accent color used in project cards
 
