@@ -20,7 +20,6 @@ export default function Header() {
           <li><Link href="#" style={linkStyle}>Projetos</Link></li>
           <li><Link href="#" style={linkStyle}>Sobre</Link></li>
           <li><Link href="#" style={linkStyle}>Blog</Link></li>
-          <li><Link href="#" style={linkStyle}>Contato</Link></li>
         </ul>
       </nav>
     </header>

@@ -8,6 +8,8 @@ export const colors = {
   line: '#1b1b1bff',
   purple: '#5e72f0ff',
 
+  // accent color used in project cards
+  accent: '#AA6BFF',
 
   // header gradient
   gradientStart: '#ffffffff',

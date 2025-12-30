@@ -3,56 +3,47 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import { colors } from '../lib/colors'
+import ButtonCta from './ButtonCta'
 
 type Project = { id: number; title: string; description: string; image: string; url: string }
 
 const PROJECTS: Project[] = [
   { id: 1, title: 'Teste do Projeto Um', description: 'Design de sites', image: '/projects/projeto-1.png', url: '#' },
   { id: 2, title: 'Projeto Dois', description: 'Desenvolvimento Web', image: '/projects/project-2.svg', url: '#' },
-  { id: 3, title: 'Projeto Três', description: 'Design de Interface', image: '/projects/project-3.svg', url: '#' },
-  { id: 4, title: 'Projeto Quatro', description: 'Branding', image: '/projects/project-4.svg', url: '#' },
-  { id: 5, title: 'Projeto Cinco', description: 'Desenvolvimento Web', image: '/projects/project-2.svg', url: '#' },
-  { id: 6, title: 'Projeto Seis', description: 'Design de sites', image: '/projects/project-3.svg', url: '#' }
+  { id: 3, title: 'Projeto Três', description: 'Design de Interface', image: '/projects/project-3.svg', url: '#' }
 ]
 
-export default function Projects({ count = 6 }: { count?: number }) {
+export default function Projects({ count = 3 }: { count?: number }) {
   const projects = PROJECTS.slice(0, count)
 
-  const [columns, setColumns] = useState<number>(2)
+  // Force single column layout; card layout and sizing handled inline below
+  const [columns] = useState<number>(1)
 
-  useEffect(() => {
-    const onResize = () => setColumns(window.innerWidth < 720 ? 1 : 2)
-    onResize()
-    window.addEventListener('resize', onResize)
-    return () => window.removeEventListener('resize', onResize)
-  }, [])
-
-  const sectionStyle: React.CSSProperties = { background: colors.background, color: colors.text, padding: '48px 16px' }
+  const sectionStyle: React.CSSProperties = { background: colors.background, color: colors.text, padding: '28px 16px' }
   // match Hero inner padding so content aligns exactly with Hero
   const containerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
-  const [hovered, setHovered] = useState<number | null>(null)
-
-  const gridStyle: React.CSSProperties = { display: 'grid', gridTemplateColumns: `repeat(${columns}, 1fr)`, gap: 28 }
+  // one card per row
+  const gridStyle: React.CSSProperties = { display: 'grid', gridTemplateColumns: '1fr', gap: 28 }
 
   // Card styles controlled here (no external CSS)
   const cardBaseStyle: React.CSSProperties = {
-    borderRadius: 10,
+    borderRadius: 12,
     overflow: 'hidden',
-    background: colors.background,
-    display: 'flex',
-    flexDirection: 'column',
- 
+    background: colors.gray,
+    transition: 'box-shadow 200ms ease',
+    boxShadow: '0 10px 28px rgba(0,0,0,0.28)'
   }
 
-  const mediaStyle: React.CSSProperties = { position: 'relative', width: '100%', paddingBottom: '100%', flex: '0 0 auto' }
-  const infoStyle: React.CSSProperties = { padding: 16, display: 'flex', alignItems: 'center' }
+  // image-focused card: image on top, content row below
+  const mediaStyle: React.CSSProperties = { position: 'relative', width: '100%', paddingBottom: '56%', minHeight: 220, overflow: 'hidden' }
+  const contentRow: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '18px 20px' }
   const titleStyle: React.CSSProperties = { margin: 0, fontSize: 20, color: colors.text }
   const descStyle: React.CSSProperties = { margin: '6px 0 0', color: 'rgba(245,245,245,0.75)', fontSize: 14 }
 
   return (
     <section style={sectionStyle} aria-labelledby="projects-title">
       <div style={containerStyle}>
-        <h3 id="projects-title" style={{ fontSize: 56,fontWeight: 300, margin: '10px 0 6px' }}>Meus Projetos</h3>
+        <h3 id="projects-title" style={{ fontSize: 56,fontWeight: 300, margin: '0 0 6px' }}>Meus Projetos</h3>
         <p style={{ color: colors.textSecondary, fontSize: 22, fontWeight: 300, marginBottom: 18 }}>Confira alguns dos meus melhores projetos.</p>
 
         <div style={gridStyle}>
@@ -65,21 +56,23 @@ export default function Projects({ count = 6 }: { count?: number }) {
               <article
                 key={p.id}
                 style={cardStyle}
-                onMouseEnter={() => setHovered(p.id)}
-                onMouseLeave={() => setHovered(null)}
                 tabIndex={0}
-                onFocus={() => setHovered(p.id)}
-                onBlur={() => setHovered(null)}
                 aria-labelledby={`proj-${p.id}-title`}
               >
                 <div style={mediaStyle}>
-                  <Image src={p.image} alt={p.title} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover' }} />
+                  <div style={{ position: 'absolute', inset: 0 }}>
+                    <Image src={p.image} alt={p.title} fill sizes="(min-width: 900px) 50vw, 100vw" style={{ objectFit: 'cover', width: '100%', height: '100%' }} />
+                  </div>
                 </div>
 
-                <div style={infoStyle}>
+                <div style={contentRow}>
                   <div style={{ flex: 1 }}>
-                    <h3 id={`proj-${p.id}-title`} style={titleStyle}>{p.title}</h3>
-                    <p style={descStyle}>{p.description}</p>
+                    <h3 id={`proj-${p.id}-title`} style={{ ...titleStyle }}>{p.title}</h3>
+                    <p style={{ ...descStyle }}>{p.description}</p>
+                  </div>
+
+                  <div style={{ marginLeft: 16 }}>
+                    <ButtonCta href={p.url}>Ver projeto</ButtonCta>
                   </div>
                 </div>
               </article>
