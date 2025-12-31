@@ -14,11 +14,15 @@ export default function Header() {
     <header style={headerStyle}>
 
       <nav style={navStyle}>
-        <div style={siteNameStyle}>WL</div>
+        <div style={siteNameStyle}>
+          <a href="https://witorlinhares.com" style={{ display: 'inline-block' }}>
+            <img src="/logo.png" alt="Witor Linhares" style={{ height: 48 }} />
+          </a>
+        </div>
 
         <ul style={listStyle}>
           <li><Link href="/projetos" style={linkStyle}>Projetos</Link></li>
-          <li><Link href="#" style={linkStyle}>Sobre</Link></li>
+          <li><Link href="/about" style={linkStyle}>Sobre</Link></li>
           <li><Link href="#" style={linkStyle}>Blog</Link></li>
           <li><Link href="#" style={linkStyle}>Discord</Link></li>
         </ul>

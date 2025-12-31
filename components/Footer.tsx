@@ -64,8 +64,8 @@ export default function Footer(){
           <div style={rightCol}>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
               <div style={{ display: 'flex', gap: 8, alignItems: 'center', color: colors.textSecondary }}>
-                <span>Protegido por</span>
-                <SiCloudflare size={24} style={{ marginLeft: 8, color: colors.white, verticalAlign: 'middle' }} aria-hidden />
+                <span>Site protegido por</span>
+                <SiCloudflare size={28} style={{ marginLeft: 8, color: colors.white, verticalAlign: 'middle' }} aria-hidden />
               </div>
 
             </div>
