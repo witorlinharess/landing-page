@@ -14,6 +14,7 @@ export default function ButtonCta({ href = '#', children = 'Saiba mais', variant
     borderRadius: 8,
     textDecoration: 'none',
     fontWeight: 600,
+    fontSize: 14,
     display: 'inline-block',
     transition: 'transform 120ms ease, background 120ms ease',
     cursor: 'pointer'
