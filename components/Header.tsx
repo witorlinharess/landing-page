@@ -24,7 +24,7 @@ export default function Header() {
           <li><Link href="/projetos" style={linkStyle}>Projetos</Link></li>
           <li><Link href="/about" style={linkStyle}>Sobre</Link></li>
           <li><Link href="#" style={linkStyle}>Blog</Link></li>
-          <li><Link href="#" style={linkStyle}>Discord</Link></li>
+          <li><Link href="https://discord.gg/eJFHGnJ6Pn" style={linkStyle}>Discord</Link></li>
         </ul>
       </nav>
     </header>

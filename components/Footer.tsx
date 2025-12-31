@@ -36,19 +36,19 @@ export default function Footer(){
           <div style={leftCol}>
             <div style={titleStyle}>Conecte-se comigo</div>
             <div style={iconsRow}>
-              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={iconBox(colors.purple)}>
+              <a href="https://www.linkedin.com/witorlinhares" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={iconBox(colors.purple)}>
                 <FaLinkedin size={18} />
               </a>
 
-              <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={iconBox(colors.purple)}>
+              <a href="https://www.instagram.com/witorlinhares" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={iconBox(colors.purple)}>
                 <FaInstagram size={18} />
               </a>
 
-              <a href="https://github.com/" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={iconBox(colors.purple)}>
+              <a href="https://github.com/witorlinharess" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={iconBox(colors.purple)}>
                 <FaGithub size={18} />
               </a>
 
-              <a href="https://discord.com/" target="_blank" rel="noopener noreferrer" aria-label="Discord" style={iconBox(colors.purple)}>
+              <a href="https://discord.gg/eJFHGnJ6Pn" target="_blank" rel="noopener noreferrer" aria-label="Discord" style={iconBox(colors.purple)}>
                 <FaDiscord size={18} />
               </a>
 
