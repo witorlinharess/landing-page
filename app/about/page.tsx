@@ -2,8 +2,8 @@ import Image from 'next/image'
 import { colors } from '../../lib/colors'
 
 export const metadata = {
-  title: 'Sobre — Witor Linhares',
-  description: 'Saiba mais sobre Witor Linhares — quem sou, tecnologias e experiências.'
+  title: 'Sobre | Witor Linhares',
+  description: 'Saiba mais sobre Witor Linhares.'
 }
 
 import Header from '../../components/Header'
@@ -37,27 +37,11 @@ export default function AboutPage() {
               <p>
                 Sou desenvolvedor full stack e trabalho na construção de produtos digitais completos aplicações web e mobile, SaaS, sistemas e dashboards sempre com foco em performance, usabilidade e resultado.
 Antes de escrever código, analiso o problema, o contexto e o impacto da solução. A tecnologia entra como meio, não como fim.
-Atuo do front ao back, tomando decisões técnicas pensadas para escala, manutenção e experiência do usuário, utilizando principalmente JavaScript e TypeScript dentro de um ecossistema moderno de desenvolvimento.
-              </p>
-
-              <h3 style={{ marginTop: 20 }}>Tecnologias</h3>
-              <ul style={listStyle}>
-                <li>React</li>
-                <li>Next.js</li>
-                <li>TypeScript</li>
-                <li>Node.js</li>
-                <li>Tailwind CSS</li>
-                <li>PostgreSQL</li>
-              </ul>
-
-              <h3 style={{ marginTop: 20 }}>Experiência</h3>
-              <p>
-                Já atuei em projetos de startups e clientes diversos, desenvolvendo desde protótipos rápidos até produtos
-                em produção com foco em performance e manutenção. Aqui você encontra links para alguns projetos e formas de contato.
+Atuo do backend ao frontend, tomando decisões técnicas e estratégicas pensadas para escala, manutenção e experiência do usuário.
               </p>
 
               <p style={{ marginTop: 20 }}>
-                Quer saber mais ou conversar sobre um projeto? Me mande uma mensagem — adoraria conversar.
+                Quer saber mais ou conversar sobre um projeto? Me envie um e-mail.
               </p>
             </div>
           </div>
