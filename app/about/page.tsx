@@ -19,7 +19,6 @@ export default function AboutPage() {
   const imgWrapperStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'flex-start' }
   const titleStyle: React.CSSProperties = { color: colors.text, fontSize: 38, fontWeight: 300, margin: '0 0 8px' }
   const sectionStyle: React.CSSProperties = { color: colors.text, fontSize: 20, fontWeight: 300, lineHeight: 1.6 }
-  const listStyle: React.CSSProperties = { listStyle: 'none', padding: 0, display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: 8 }
 
   return (
     <div style={wrapperStyle}>
@@ -33,10 +32,7 @@ export default function AboutPage() {
 
           <div>
             <h1 style={titleStyle}>Eu sou Witor Linhares</h1>
-
-            <h2 style={{ color: colors.textSecondary, fontSize: 18, margin: '8px 0 12px', fontWeight: 500 }}>Desenvolvedor full-stack — interfaces e APIs</h2>
-
-            
+           
 
             <div style={sectionStyle}>
               <p>
