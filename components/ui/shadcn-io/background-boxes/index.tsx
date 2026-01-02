@@ -2,7 +2,6 @@
 
 import React, { useEffect, useState } from "react";
 // keep motion import in case we want hover/animate later
-import { motion } from "framer-motion";
 import { cn } from '../../../../lib/utils' ;
 
 export interface BoxesProps {
