@@ -24,7 +24,7 @@ export default function Hero(){
 
   const titleStyle: React.CSSProperties = { 
     fontWeight: 300, 
-    fontSize: 'clamp(40px, 6vw, 72px)', 
+    fontSize: 'clamp(40px, 6vw, 92px)', 
     lineHeight: 1.2, 
     letterSpacing: '-0.02em',
     margin: 0,
@@ -46,13 +46,10 @@ export default function Hero(){
     <section style={sectionStyle}>
       <div className="heroInner fadeIn" style={innerStyle}>
         <h1 style={titleStyle}>
-          Full Stack Developer<br />
-          focado em performance<br />
-          e experiência
+          Código é só o meio, <br />o foco é o resultado
         </h1>
         <h2 style={descStyle}>
-          Construindo produtos digitais com código limpo e design intencional.
-          Especializado em aplicações web modernas e escaláveis.
+          Tecnologia bem aplicada para resolver problemas reais, sem atalhos, sem soluções genéricas e obsoletas.
         </h2>
 
         <div style={{ display: 'flex', gap: 16, marginTop: 30, alignItems: 'center' }}>

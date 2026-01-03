@@ -5,10 +5,15 @@ import { colors } from '../lib/colors'
 
 export default function Footer(){
   const footerStyle: React.CSSProperties = { 
+    position: 'fixed',
+    bottom: 0,
+    left: 0,
+    right: 0,
     background: colors.background, 
     color: colors.text, 
     padding: '40px 0 40px', 
-    borderTop: `1px solid ${colors.border}`
+    borderTop: `1px solid ${colors.border}`,
+    zIndex: 10,
   }
   
   const innerStyle: React.CSSProperties = { 
