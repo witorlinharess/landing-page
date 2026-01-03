@@ -51,8 +51,8 @@ export default function Projects({ count = 4 }: { count?: number }) {
               <Link
                 key={p.id}
                 href={p.url}
-                target={p.url.startsWith('http') ? '_blank' : undefined}
-                rel={p.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                target={p.url.startsWith('https') ? '_blank' : undefined}
+                rel={p.url.startsWith('https') ? 'noopener noreferrer' : undefined}
                 style={{ textDecoration: 'none' }}
               >
                 <article
@@ -66,7 +66,7 @@ export default function Projects({ count = 4 }: { count?: number }) {
                       alt={p.title} 
                       fill 
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 40vw" 
-                      style={{ objectFit: 'contain' }}
+                      style={{ objectFit: 'cover', objectPosition: 'center' }}
                       quality={95}
                     />
                   </div>
