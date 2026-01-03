@@ -19,7 +19,7 @@ export default function Projects({ count = 3 }: { count?: number }) {
   // Force single column layout; card layout and sizing handled inline below
   const [columns] = useState<number>(1)
 
-  const sectionStyle: React.CSSProperties = { background: colors.background, color: colors.text, padding: '28px 16px' }
+  const sectionStyle: React.CSSProperties = { background: colors.background, color: colors.text, padding: '28px 0' }
   // match Hero inner padding so content aligns exactly with Hero
   const containerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
   // one card per row
@@ -35,14 +35,14 @@ export default function Projects({ count = 3 }: { count?: number }) {
   // image-focused card: image on top, content row below
   const mediaStyle: React.CSSProperties = { position: 'relative', width: '100%', paddingBottom: '56%', minHeight: 220, overflow: 'hidden' }
   const contentRow: React.CSSProperties = { display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, padding: '18px 20px' }
-  const titleStyle: React.CSSProperties = { margin: 0, fontSize: 20, color: colors.text }
-  const descStyle: React.CSSProperties = { margin: '6px 0 0', color: 'rgba(245,245,245,0.75)', fontSize: 14 }
+  const titleStyle: React.CSSProperties = { margin: 0, fontSize: 'clamp(26px, 5vw, 20px)', fontWeight: 300, color: colors.text }
+  const descStyle: React.CSSProperties = { margin: '6px 0 0', color: 'rgba(245,245,245,0.75)', fontSize: 'clamp(18px, 4vw, 14px)' }
 
   return (
     <section style={sectionStyle} aria-labelledby="projects-title">
-      <div style={containerStyle}>
-        <h3 id="projects-title" style={{ fontSize: 56,fontWeight: 300, margin: '0 0 6px' }}>Meus Projetos</h3>
-        <p style={{ color: colors.textSecondary, fontSize: 22, fontWeight: 300, marginBottom: 64 }}>Confira alguns dos meus melhores projetos.</p>
+      <div className="projectsContainer" style={containerStyle}>
+        <h3 id="projects-title" style={{ fontSize: 'clamp(32px, 8vw, 56px)', fontWeight: 300, margin: '0 0 6px' }}>Meus Projetos</h3>
+        <p style={{ color: colors.textSecondary, fontSize: 'clamp(18px, 4vw, 22px)', fontWeight: 300, marginBottom: 44 }}>Confira alguns dos meus melhores projetos.</p>
 
         <div style={gridStyle}>
           {projects.map(p => {
@@ -63,13 +63,13 @@ export default function Projects({ count = 3 }: { count?: number }) {
                   </div>
                 </div>
 
-                <div style={contentRow}>
+                <div className="projectContent" style={contentRow}>
                   <div style={{ flex: 1 }}>
                     <h3 id={`proj-${p.id}-title`} style={{ ...titleStyle }}>{p.title}</h3>
                     <p style={{ ...descStyle }}>{p.description}</p>
                   </div>
 
-                  <div style={{ marginLeft: 16 }}>
+                  <div className="projectButton" style={{ marginLeft: 16 }}>
                     <ButtonCta href={p.url}>Ver projeto</ButtonCta>
                   </div>
                 </div>
@@ -77,6 +77,14 @@ export default function Projects({ count = 3 }: { count?: number }) {
             )
           })}
         </div>
+
+        <style jsx>{`
+          @media (max-width: 767px) {
+            .projectContent { flex-direction: column !important; align-items: flex-start !important; }
+            .projectButton { margin-left: 0 !important; width: 100%; margin-top: 8px; }
+            .projectsContainer { padding-left: 20px !important; padding-right: 20px !important; }
+          }
+        `}</style>
       </div>
     </section>
   )

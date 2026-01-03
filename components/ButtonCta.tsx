@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link'
 import { colors } from '../lib/colors'
 
@@ -10,19 +12,20 @@ type Props = {
 
 export default function ButtonCta({ href = '#', children = 'Saiba mais', variant = 'primary', external = false }: Props) {
   const base: React.CSSProperties = {
-    padding: '12px 28px',
+    padding: '16px 32px',
     borderRadius: 8,
     textDecoration: 'none',
     fontWeight: 600,
-    fontSize: 14,
+    fontSize: 16,
     display: 'inline-block',
     transition: 'transform 120ms ease, background 120ms ease',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    textAlign: 'center'
   }
 
   const primaryStyle: React.CSSProperties = {
     ...base,
-    background: colors.purple,
+    background: colors.orange,
     color: colors.white,
   }
 
@@ -36,8 +39,15 @@ export default function ButtonCta({ href = '#', children = 'Saiba mais', variant
   const style = variant === 'ghost' ? ghostStyle : primaryStyle
 
   return (
-    <Link href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} className="button-cta" style={style} aria-label={typeof children === 'string' ? children : 'Call to action'}>
-      {children}
-    </Link>
+    <>
+      <Link href={href} target={external ? '_blank' : undefined} rel={external ? 'noopener noreferrer' : undefined} className="button-cta" style={style} aria-label={typeof children === 'string' ? children : 'Call to action'}>
+        {children}
+      </Link>
+      <style jsx>{`
+        @media (max-width: 767px) {
+          .button-cta { width: 100%; text-align: center; padding: 12px 24px !important; font-size: 14px !important; }
+        }
+      `}</style>
+    </>
   )
 }
