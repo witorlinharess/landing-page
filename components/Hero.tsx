@@ -5,7 +5,15 @@ import ButtonCta from './ButtonCta'
 
 export default function Hero(){
   // reduce vertical footprint so Projects sits closer to Hero
-  const sectionStyle: React.CSSProperties = { background: colors.background, minHeight: '72vh', display: 'flex', alignItems: 'flex-start', color: colors.text, borderBottom: `1px solid ${colors.line}`, paddingBottom: 40 }
+  const sectionStyle: React.CSSProperties = { 
+    background: `${colors.background} url(/background.png) center/cover no-repeat`, 
+    minHeight: '72vh', 
+    display: 'flex', 
+    alignItems: 'flex-start', 
+    color: colors.text, 
+    borderBottom: `1px solid ${colors.line}`, 
+    paddingBottom: 40
+  }
   const innerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
   const subtitleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 'clamp(26px, 3.5vw, 22px)', color: colors.textSecondary }
   const titleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 'clamp(45px, 8vw, 80px)', lineHeight: 1.1, marginTop: 60,
@@ -30,10 +38,10 @@ export default function Hero(){
     <section style={sectionStyle}>
       <div className="heroInner" style={innerStyle}>
 
-        <h1 style={titleStyle}>
+        <h1 className="fadeInUp" style={titleStyle}>
           Desenvolvedor full stack focado em performance, resultado e experiência do usuário.
         </h1>
-        <div className="heroBottom" style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 20, width: '100%' }}>
+        <div className="heroBottom fadeInUp" style={{ display: 'flex', alignItems: 'center', gap: 24, marginTop: 20, width: '100%' }}>
           <h2 style={{ ...subtitleStyle, margin: 0 }}>Código é só o meio. O foco é a solução.</h2>
 
           {/* horizontal divider that fills space between h2 and the button */}
@@ -46,6 +54,31 @@ export default function Hero(){
         </div>
 
         <style jsx>{`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          .fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+          }
+
+          h1.fadeInUp {
+            animation-delay: 0.2s;
+            opacity: 0;
+          }
+
+          .heroBottom.fadeInUp {
+            animation-delay: 0.5s;
+            opacity: 0;
+          }
+
           @media (max-width: 767px) {
             .heroBottom { flex-direction: column; align-items: flex-start !important; gap: 20px !important; }
             .heroDivider { display: none !important; }

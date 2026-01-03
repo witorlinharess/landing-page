@@ -4,7 +4,7 @@ import Footer from '../../components/Footer'
 import { colors } from '../../lib/colors'
 
 export const metadata = {
-  title: 'Projetos – Witor Linhares',
+  title: 'Projetos | Witor Linhares',
 }
 
 export default function ProjetosPage(){
