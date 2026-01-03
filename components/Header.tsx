@@ -239,7 +239,6 @@ export default function Header() {
                   style={{
                     width: 48,
                     height: 48,
-                    borderRadius: '50%',
                     objectFit: 'cover',
                   }}
                 />

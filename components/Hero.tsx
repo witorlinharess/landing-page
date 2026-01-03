@@ -67,7 +67,7 @@ export default function Hero(){
 
         <div style={{ display: 'flex', gap: 16, marginTop: 40, alignItems: 'center' }}>
           <a 
-            href="#portfolio" 
+            href="mailto:witorlinhares@gmail.com" 
             style={{
               display: 'inline-block',
               padding: '12px 32px',
@@ -81,10 +81,10 @@ export default function Hero(){
             }}
             className="btnPrimary"
           >
-            Portfólio
+            Orçamento
           </a>
           <a 
-            href="/about" 
+            href="/projetos" 
             style={{
               display: 'inline-block',
               padding: '12px 32px',
@@ -99,7 +99,7 @@ export default function Hero(){
             }}
             className="btnSecondary"
           >
-            Sobre Mim
+            Portfólio
           </a>
         </div>
 

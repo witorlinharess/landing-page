@@ -5,9 +5,10 @@ import { colors } from '../lib/colors'
 
 export default function Footer(){
   const footerStyle: React.CSSProperties = { 
-    background: colors.text, 
-    color: colors.background, 
-    padding: '80px 0 40px' 
+    background: colors.background, 
+    color: colors.text, 
+    padding: '40px 0 40px', 
+    borderTop: `1px solid ${colors.border}`
   }
   
   const innerStyle: React.CSSProperties = { 
@@ -22,7 +23,7 @@ export default function Footer(){
 
   const titleStyle: React.CSSProperties = { 
     fontSize: 14, 
-    color: colors.background,
+    color: colors.text,
     marginBottom: 24,
     letterSpacing: '0.3px',
     opacity: 0.6,
@@ -35,24 +36,17 @@ export default function Footer(){
   }
 
   const iconLink: React.CSSProperties = {
-    color: colors.background,
+    color: colors.text,
     textDecoration: 'none',
     transition: 'opacity 0.2s ease',
     opacity: 0.8,
   }
 
-  const copyrightStyle: React.CSSProperties = {
-    fontSize: 12,
-    color: colors.background,
-    opacity: 0.4,
-    letterSpacing: '0.3px',
-  }
-
   return (
     <footer style={footerStyle} aria-label="Footer">
       <div className="footerInner" style={innerStyle}>
-        <div>
-          <div style={titleStyle}>Conecte-se</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 24 }}>
+          <div style={{ ...titleStyle, marginBottom: 0 }}>Conecte-se comigo:</div>
           <div style={iconsRow}>
             <a href="https://www.linkedin.com/witorlinhares" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" style={iconLink} className="iconLink">
               <FaLinkedin size={20} />
@@ -70,15 +64,9 @@ export default function Footer(){
               <FaDiscord size={20} />
             </a>
 
-            <a href="mailto:witorlinhares@gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Email" style={iconLink} className="iconLink">
-              <FaEnvelope size={20} />
-            </a>
           </div>
         </div>
 
-        <div style={copyrightStyle}>
-          © 2024 Witor Linhares
-        </div>
 
         <style jsx>{`
           .iconLink:hover {
