@@ -5,7 +5,15 @@ import ButtonCta from './ButtonCta'
 
 export default function Hero(){
   // reduce vertical footprint so Projects sits closer to Hero
-  const sectionStyle: React.CSSProperties = { background: colors.background, minHeight: '72vh', display: 'flex', alignItems: 'flex-start', color: colors.text, borderBottom: `1px solid ${colors.line}`, paddingBottom: 40 }
+  const sectionStyle: React.CSSProperties = { 
+    background: `${colors.background} url(/background.png) center/cover no-repeat`, 
+    minHeight: '72vh', 
+    display: 'flex', 
+    alignItems: 'flex-start', 
+    color: colors.text, 
+    borderBottom: `1px solid ${colors.line}`, 
+    paddingBottom: 40
+  }
   const innerStyle: React.CSSProperties = { maxWidth: 1320, margin: '0 auto', paddingLeft: 48, paddingRight: 48 }
   const subtitleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 'clamp(26px, 3.5vw, 22px)', color: colors.textSecondary }
   const titleStyle: React.CSSProperties = { fontWeight: 300, fontSize: 'clamp(45px, 8vw, 80px)', lineHeight: 1.1, marginTop: 60,

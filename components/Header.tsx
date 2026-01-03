@@ -7,8 +7,8 @@ import React, { useEffect, useState } from 'react'
 
 export default function Header() {
   // keep header limited to nav height so gradient doesn't overlap hero
-  const headerStyle: React.CSSProperties = { position: 'fixed', left: 0, right: 0, top: 0, zIndex: 20, height: 116, background: colors.background, borderBottom: `1px solid ${colors.line}` }
-  const navStyle: React.CSSProperties = { position: 'relative', zIndex: 30, maxWidth: 1320, margin: '0 auto', padding: '0 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 116 }
+  const headerStyle: React.CSSProperties = { position: 'fixed', left: 0, right: 0, top: 0, zIndex: 20, height: 120, background: colors.background, borderBottom: `1px solid ${colors.line}` }
+  const navStyle: React.CSSProperties = { position: 'relative', zIndex: 30, maxWidth: 1320, margin: '0 auto', padding: '0 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 120 }
   const siteNameStyle: React.CSSProperties = { color: colors.text, fontSize: 28, fontWeight: 600, letterSpacing: '0.6px' }
   const listStyle: React.CSSProperties = { display: 'flex', alignItems: 'center', gap: 28, fontSize: 14, color: colors.text, listStyle: 'none', margin: 0, padding: 0 }
   const linkStyle: React.CSSProperties = { color: colors.text, textDecoration: 'none' }
