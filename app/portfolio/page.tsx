@@ -5,6 +5,10 @@ import { colors } from '../../lib/colors'
 
 export const metadata = {
   title: 'Portfólio | Witor Linhares',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function portfolioPage(){

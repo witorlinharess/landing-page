@@ -234,7 +234,7 @@ export default function Header() {
               Portfólio
             </Link>
             <Link 
-              href="/about" 
+              href="/sobre" 
               onClick={() => setMenuOpen(false)}
               style={{
                 width: 'fit-content',

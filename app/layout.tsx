@@ -6,7 +6,7 @@ const SITE_NAME = 'Witor Linhares | Dev Full Stack'
 
 export const metadata: Metadata = {
   title: SITE_NAME,
-  description: 'Dev Full Stack — Links úteis e contato',
+  description: 'Desenvolvedor full stack focado em criar soluções digitais orientadas a resultado. Aplicações web e mobile, SaaS e sistemas sob medida.',
   metadataBase: new URL(SITE_URL),
   applicationName: 'Witor Linktree',
   viewport: 'width=device-width,initial-scale=1',
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: SITE_NAME,
-    description: 'Dev Full Stack — Links úteis e contato',
+    description: 'Desenvolvedor full stack focado em criar soluções digitais orientadas a resultado. Aplicações web e mobile, SaaS e sistemas sob medida.',
     url: SITE_URL,
     siteName: SITE_NAME,
     images: [
       {
-        url: `${SITE_URL}/witor-linhares.webp`,
+        url: `${SITE_URL}/seo-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Witor Linhares',
+        alt: 'Witor Linhares - Desenvolvedor Full Stack',
       },
     ],
     locale: 'pt_BR',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: SITE_NAME,
-    description: 'Dev Full Stack — Links úteis e contato',
-    images: [`${SITE_URL}/witor-linhares.webp`],
+    description: 'Desenvolvedor full stack focado em criar soluções digitais orientadas a resultado. Aplicações web e mobile, SaaS e sistemas sob medida.',
+    images: [`${SITE_URL}/seo-image.png`],
   },
   icons: {
     icon: '/favicon.png',

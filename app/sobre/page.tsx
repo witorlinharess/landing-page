@@ -18,7 +18,7 @@ export default function AboutPage() {
     flex: 1, 
     maxWidth: 1200, 
     margin: '0 auto', 
-    padding: '160px 48px 120px' 
+    padding: '160px 48px 200px' 
   }
   
   const gridStyle: React.CSSProperties = { 
@@ -64,12 +64,13 @@ export default function AboutPage() {
               alt="Witor Linhares" 
               width={280} 
               height={280} 
-              style={{ objectFit: 'cover' }} 
+              style={{ objectFit: 'cover' }}
+              className="profileImage"
             />
           </div>
 
           <div>
-            <h1 style={titleStyle}>
+            <h1 style={titleStyle} className="aboutTitle">
               Desenvolvedor Full Stack<br />orientado a resultados
             </h1>
            
@@ -117,7 +118,15 @@ export default function AboutPage() {
           @media (max-width: 767px) {
             .aboutGrid { grid-template-columns: 1fr !important; gap: 40px !important; }
             .aboutImage { justify-content: flex-start !important; }
-            main { padding-left: 20px !important; padding-right: 20px !important; }
+            main { padding-left: 20px !important; padding-right: 20px !important; padding-top: 120px !important; padding-bottom: 150px !important; }
+            .aboutTitle { font-size: 32px !important; }
+          }
+
+          @media (max-width: 767px) {
+            :global(.profileImage) {
+              width: 180px !important;
+              height: 180px !important;
+            }
           }
         `}</style>
       </main>

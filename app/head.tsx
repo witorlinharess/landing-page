@@ -6,12 +6,13 @@ export default function Head() {
     "name": "Witor Linhares",
     "url": siteUrl,
     "sameAs": [
-      "https://www.linkedin.com/",
-      "https://github.com/",
-      "https://instagram.com/"
+      "https://www.linkedin.com/in/witorlinhares",
+      "https://github.com/witorlinhares",
+      "https://instagram.com/witorlinhares"
     ],
-    "jobTitle": "Dev Full Stack",
-    "image": `${siteUrl}/witor-linhares.webp`
+    "jobTitle": "Desenvolvedor Full Stack",
+    "description": "Desenvolvedor full stack especializado em aplicações web e mobile, SaaS e sistemas sob medida",
+    "image": `${siteUrl}/seo-image.png`
   }
 
   return (
