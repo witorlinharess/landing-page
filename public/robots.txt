@@ -1,6 +1,5 @@
 User-agent: *
-Allow: /
+Allow: /$
+Disallow: /portfolio
+Disallow: /sobre
 Sitemap: https://witorlinhares.com/sitemap.xml
-
-# If you want to block indexing of query parameter variations, add rules below
-# Disallow: /*?*

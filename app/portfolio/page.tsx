@@ -4,12 +4,16 @@ import Footer from '../../components/Footer'
 import { colors } from '../../lib/colors'
 
 export const metadata = {
-  title: 'Projetos | Witor Linhares',
+  title: 'Portfólio | Witor Linhares',
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
-export default function ProjetosPage(){
+export default function portfolioPage(){
   const wrapperStyle: React.CSSProperties = { display: 'flex', flexDirection: 'column', minHeight: '100vh', background: colors.background, color: colors.text }
-  const mainStyle: React.CSSProperties = { flex: 1, paddingTop: 140, paddingBottom: 60 }
+  const mainStyle: React.CSSProperties = { flex: 1, paddingTop: 80, paddingBottom: 60 }
 
   return (
     <div style={wrapperStyle}>
