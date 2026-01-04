@@ -5,14 +5,36 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { colors } from '../lib/colors'
 
-type Project = { id: number; title: string; description: string; image: string; url: string }
+type Project = { 
+  id: number
+  slug: string
+  title: string
+  description: string
+  image: string
+  url: string
+}
 
 const PROJECTS: Project[] = [
-  { id: 1, title: 'Site Wefronti', description: 'Site desenvolvido para a Wefronti, empresa Brasileira de tecnologia.', image: '/projects/projeto-wefronti.png', url: 'https://wefronti.com' },
-  // { id: 2, title: 'Projeto Dois', description: 'Desenvolvimento Web', image: '/projects/project-2.svg', url: '#' },
-  // { id: 3, title: 'Projeto Três', description: 'Design de Interface', image: '/projects/project-3.svg', url: '#' },
-  // { id: 4, title: 'Projeto Quatro', description: 'Aplicativo Mobile', image: '/projects/project-2.svg', url: '#' },
+  { 
+    id: 1, 
+    slug: 'wefronti',
+    title: 'Site Wefronti', 
+    description: 'Site desenvolvido para a Wefronti, empresa Brasileira de tecnologia.', 
+    image: '/projects/projeto-wefronti.png', 
+    url: 'https://wefronti.com' 
+  },
+  { 
+    id: 2, 
+    slug: 'checkpay',
+    title: 'Página de Checkout CheckPay', 
+    description: 'Interface de checkout otimizada para conversão e experiência do usuário.', 
+    image: '/projects/projeto-wefronti.png', 
+    url: '#' 
+  },
 ]
+
+export { PROJECTS }
+export type { Project }
 
 export default function Projects({ count = 4 }: { count?: number }) {
   const projects = PROJECTS.slice(0, count)
@@ -80,9 +102,7 @@ export default function Projects({ count = 4 }: { count?: number }) {
             return (
               <Link
                 key={p.id}
-                href={p.url}
-                target={p.url.startsWith('https') ? '_blank' : undefined}
-                rel={p.url.startsWith('https') ? 'noopener noreferrer' : undefined}
+                href={`/portfolio/${p.slug}`}
                 style={{ textDecoration: 'none' }}
               >
                 <article
